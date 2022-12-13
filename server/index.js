@@ -8,9 +8,7 @@ import { fileURLToPath } from "url";
 
 const app = express()
 
-app.use(cors({
-    origin: 'https://mern-con-mysql-production.up.railway.app/tasks'
-}));
+app.use(cors());
 app.use(express.json())
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
