@@ -5,10 +5,12 @@ import taskRoutes from './routes/tasks.routes.js'
 import cors from 'cors'
 import {dirname, join} from 'path'
 import { fileURLToPath } from "url";
+
 const app = express()
+
 app.use(cors({
-    origin: 'http://localhost:5173'
-}))
+    origin: 'https://mern-con-mysql-production.up.railway.app/tasks'
+}));
 app.use(express.json())
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
