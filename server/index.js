@@ -8,9 +8,25 @@ import { fileURLToPath } from "url";
 
 const app = express()
 
-app.use(cors({
-    origin: 'https://mern-con-mysql.vercel.app'
-}));
+const whitelist = [
+    "http://localhost:5173/",
+    "http://localhost:4000/",
+    "https://mern-con-mysql.vercel.app",
+    "https://mern-con-mysql-bsrghwbt9-fbonilla02.vercel.app"
+]
+
+const corsOptions = {
+    origin: function(origin, callback){
+        if(whitelist.indexOf(origin) !== -1 || !origin){
+            callback(null, true);
+        }else{
+            callback(new Error("Not allowed by CORS"))
+        }
+    }
+}
+
+app.use(cors(corsOptions));
+
 app.use(express.json())
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
