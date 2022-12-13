@@ -43,6 +43,8 @@ export default function TaskForm() {
           Navigate("/")
         }else{
          await createTask(values)
+         alert('se agrego con exito')
+         Navigate("/")
         }
         setTask({
           title: "",

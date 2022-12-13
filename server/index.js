@@ -9,8 +9,8 @@ import { fileURLToPath } from "url";
 const app = express()
 
 const whitelist = [
-    "http://localhost:5173/",
-    "http://localhost:4000/",
+    "http://localhost:5173",
+    "http://localhost:4000",
     "https://mern-con-mysql.vercel.app",
     "https://mern-con-mysql-bsrghwbt9-fbonilla02.vercel.app"
 ]
